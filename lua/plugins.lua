@@ -21,7 +21,7 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
         },
         opts = {
-            ensure_installed = { "pylsp" },
+            ensure_installed = { "ruff", "rull-lsp", "prettierd", "llm-ls"},
         },
 
     },
@@ -34,6 +34,25 @@ require("lazy").setup({
 		end,},
 
     "folke/tokyonight.nvim",
+    {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
+    -- Optional image support for file preview: See `# Preview Mode` for more information.
+    -- {"3rd/image.nvim", opts = {}},
+    -- OR use snacks.nvim's image module:
+    -- "folke/snacks.nvim",
+  },
+  lazy = false, -- neo-tree will lazily load itself
+  ---@module "neo-tree"
+  ---@type neotree.Config?
+  opts = {
+    -- add options here
+  },
+},
 {
         "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
@@ -115,5 +134,31 @@ require("lazy").setup({
             signature = { enabled = true },
         },
         opts_extend = { "sources.default" },
-    }
+    },
+    {'nvim-telescope/telescope.nvim', tag = '0.1.8',},
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  },
+  keys = {
+    {
+      "<Space>",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
+},
+{
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+},
+'huggingface/llm.nvim'
+
     })

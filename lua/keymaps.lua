@@ -20,11 +20,10 @@ vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
-vim.keymap.set('n', '<C-/>', ':ToggleTerm dir=./ direction=float<CR>', opts)
+vim.keymap.set('n', '<Space>e', ':ToggleTerm dir=./ direction=float<CR>', opts)
 vim.keymap.set('n', '<Space>e', ':Neotree toggle<CR>', opts)
 
-vim.keymap.set("t", "<C-/>", "exit<CR>", opts)
-
+ 
 -----------------
 -- Visual mode --
 -----------------

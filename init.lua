@@ -8,7 +8,7 @@ require('lualine').setup()
 require('llm').setup(
 {
   backend = "ollama",
-  model = "codellama:7b",
+  model = "qwen3:latest",
   url = "http://localhost:11434",
   enable_suggestions_on_startup = true;
   request_body = {
